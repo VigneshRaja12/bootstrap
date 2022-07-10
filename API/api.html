@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="api.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"> -->
+</head>
+<body>
+  <label for="">TEAMS</label>
+  <select name="select" id="select">
+    
+    
+  </select>
+  <button id="idbutton">ID</button>
+  <button id="name">NAME</button>
+  <button id="teamnamebutton">TEAM NAME</button>
+  
+  <button id="division">DIVISION</button>
+  <label for="">SEARCH</label>
+  <input type="text" name="filter" id="fil">
+  <!-- <button>filter</button> -->
+  <table>
+    <thead>
+      <tr>
+        <th class="num" id="id">Id</th>
+        <th class="text" id="first">First Name</th>
+        <th class="text" id="teamdivision">Team Division</th>
+        <th class="text" id="team">Team Name</th>
+      </tr>
+    </thead>
+    <tbody id="tablebody">
+      <tr tab id="body">
+        <td ></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    </tbody>
+   
+  </table>
+   <script src="jquery.js"></script> 
+   <script>
+    $(document).ready(function(){
+      //serach filter
+      $("#fil").on("keyup",function(){
+        var value=$(this).val().toLocaleLowerCase();
+        $("#tablebody tr").filter(function(){
+          $(this).toggle($(this).text().toLocaleLowerCase().indexOf(value)>-1);
+        });
+      }); 
+    });
+//name sort button    
+    $("#first").each(function(column){
+      $("#first").data("type",$("#first").attr("class"));
+    $("#name").click(function(){
+      var type=$("#first").data("type");
+      var records=$("table").find("tbody > tr");
+      console.log(records);
+    
+      records.sort(function(a,b){
+        var value1=$(a).children("td").eq(1).text();
+        var value2=$(b).children("td").eq(1).text();
+       // console.log(value1);
+        if(type=="num"){
+          value1*=value1;
+          value2*=value2;
+        }
+       
+        return (value1<value2)?-1:(value1>value2 ?1:0)
+      });
+     $.each(records,function(index,row){
+     $("tbody").append(row);
+    });
+  });
+});
+//button for id sort
+    $("#id").each(function(column){
+    $("#id").data("type",$("#id").attr("class"));
+    $("#idbutton").click(function(){
+      var type=$("#id").data("type");
+      var records=$("table").find("tbody >tr");
+      //console.log(records);
+      records.sort(function(a,b){
+      var value1=$(a).children("td").eq(0).text();
+      var value2=$(b).children("td").eq(0).text();
+      //console.log(value1);
+      if(type=="num"){
+       value1*=value1;
+       value2*=value2;
+       }
+   
+     return (value1<value2)?-1:(value1>value2 ?1:0)
+  });
+$.each(records,function(index,row){
+ $("tbody").append(row);
+});
+});
+});
+//button for team name sort
+$("#team").each(function(column){
+  $("#team").data("type",$("#team").attr("class"));
+  $("#teamnamebutton").click(function(){
+    var type=$("#team").data("type");
+    var records=$("table").find("tbody >tr");
+    // console.log(records);
+    
+    records.sort(function(a,b){
+      var value1=$(a).children("td").eq(3).text();
+      var value2=$(b).children("td").eq(3).text();
+      console.log(value1);
+      
+      if(type=="num"){
+        value1*=value1;
+        value2*=value2;
+      }
+      return (value1<value2)?-1:(value1>value2 ?1:0)
+    });
+    $.each(records,function(index,row){
+      $("tbody").append(row);
+    });
+  });
+});
+//button for division sort
+$("#teamdivision").each(function(column){
+  $("#teamdivision").data("type",$("#teamdivision").attr("class"));
+  $("#division").click(function(){
+    var type=$("#teamdivision").data("type");
+    var records=$("table").find("tbody >tr");
+    // console.log(records);
+    
+    records.sort(function(a,b){
+      var value1=$(a).children("td").eq(2).text();
+      var value2=$(b).children("td").eq(2).text();
+      console.log(value1);
+      
+      if(type=="num"){
+        value1*=value1;
+        value2*=value2;
+      }
+      return (value1<value2)?-1:(value1>value2 ?1:0)
+    });
+    $.each(records,function(index,row){
+      $("tbody").append(row);
+    });
+  });
+});
+//selection bar filter
+var filterTable = function(item) {
+  
+  var val = item.val();
+  $('tbody tr').each(function(){
+    var tr = $(this);
+    if (tr.find('td:eq(3)').text()==val){
+        tr.show();
+    } else {
+        tr.hide();
+    }
+});
+}
+$("select").on("change", function(e){
+  filterTable($(this));
+    
+ 
+//filterTable($("select"));
+    });
+   </script>
+ 
+  <script src="api.js"></script>
+</body>
+</html>
