@@ -1,0 +1,93 @@
+body{
+  background-image: url(taj.jpg);
+  background-size: cover;
+}
+.Google
+{    
+    position:absolute;
+     left:39%; 
+     top:20%; 
+     justify-content: center;
+     
+}
+h1{
+    font-size: 100px;
+    color: white;
+}
+.searchbox
+{
+    position:absolute;
+    left:25%;
+    top:45%;
+    
+
+
+}
+.searchbar
+{
+    height: 54px;
+    left: 0;
+    right: 0;
+    width:700px;
+    border-radius: 100px;
+    border-color: red;
+    text-align: center;
+    
+}
+.searchicon
+{
+    height:25px;
+    fill: #6b6e73;
+    background: white;
+    border-radius:5px;
+    position: absolute;
+    left:2%;
+    top:30%;
+}
+
+
+.voice
+{    
+    height:25px;
+    position:absolute;
+    left: 90%;
+    top:30%;
+
+    
+}
+.row1{
+    display: inline-flex;
+    position: absolute;
+    left:20%;
+    top:45%;
+}
+.logo{
+    position:relative;
+    left:40%;
+    top: 50%;
+    margin-left:50px;
+    height: 80px;
+    width: 80px;
+    padding:10px;
+
+    
+}
+.txt{
+    position: relative;
+    left: 89%;
+    top: 55%;
+    color: white
+}
+.row2
+{
+    display: inline-flex;
+    position: absolute;
+    left:25%;
+    top:60%;
+
+}
+.bottom{
+    position:fixed;
+    top: 92%;
+    left: 92%;
+}
