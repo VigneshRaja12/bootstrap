@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MY Details </h1><hr>
+    <form action="submit" id="form1" name="form">
+        <label for="Name">Name</label>
+        <input type="text" input class="name" placeholder="Enter Name">
+        <label for="Name">Age</label>
+        <input type="number" input class="age" placeholder="Enter Age">
+        <label for="email">Email</label>
+        <input type="email" input class="email" placeholder="Enter Email">
+        <p>Gender  
+            <input type="radio" name="gender" class="gender" value="Male">
+            <label for="gender">Male</label>
+            <input type="radio" name="gender" class="gender" value="=Female">
+            <label for="gender">Female</label></p>
+           
+         <p>Skills <label for="skills">HTML</label>
+            <input type="checkbox" name="gender" class="skill" >
+            <label for="skills">CSS</label>
+            <input type="checkbox" name="gender" class="skill" >
+            <label for="skills">JS</label>
+            <input type="checkbox" name="gender" class="skill" ></p>
+            
+            <label for="cars">Choose tech:</label>
+            <select name="selecttech" class="tech">
+            <option value="1">Angular</option>
+            <option value="2">React</option>
+            <option value="3">Viu</option>
+            <option value="4">Node</option>
+            </select>
+            <input type="submit" value="submit" class="submit">
+            
+       
+
+    </form>
+    <p></p>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".submit").click(function(){
+                var a=$(".name").val();
+                var b=$(".age").val();
+                var c=$(".email").val();
+                var d=$('input[name=gender]:checked','form').val();
+              
+                var e = $('.skill').is(':checked');
+                var f=$(".tech").val();
+                console.log(d);
+                console.log(e);
+                console.log(a);
+                if(a==""||b==""||c==""||d!="on"||e!=true){
+                    alert("Fill all values");
+                }
+                else{
+                    alert("form filled");
+                }
+               $("p").append(a,b,c,d,e,f);
+              
+
+            });
+
+        });
+    </script>
+</body>
+</html>

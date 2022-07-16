@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="todo.css">
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     
+  </head>
+  <body>
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav-item">
+        <button
+        class="nav-link active"
+        id="v-pills-home-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#v-pills-home"
+        type="button"
+        role="tab"
+        aria-controls="v-pills-home"
+        aria-selected="true"
+        onclick="showDiv1()" 
+      >
+        Task
+      </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" id="add"class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          ADD TASK
+        </button>
+      </li>
+      <li class="nav-item">
+        <button
+        class="nav-link"
+        id="v-pills-profile-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#v-pills-profile"
+        type="button"
+        role="tab"
+        aria-controls="v-pills-profile"
+        aria-selected="false"
+        onclick="showDiv2()"
+      >
+        Completed
+      </button>
+      </li>
+     
+    </ul>
+    <div id="first">This is the FIRST div</div>
+    <div id="second" >This is the SECOND div</div>
+   
+    <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">TODO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="taskname"></label>
+        <input id="taskname" type="text"/>
+        <br />
+        <br />
+        <input
+          type="datetime-local"
+          onload="timeset()"
+          id="time"
+          name="time"
+          max="2024-06-14T00:00"
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">ADD</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <script src="todo.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>

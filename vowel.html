@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+   
+    <form class="row g-3">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+        
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+       
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">country</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>India</option>
+            <option>Germany</option>
+            <option>Spain</option>
+            <option>France</option>
+            <option>USA</option>
+            <option>UK</option>
+          </select>
+        </div>
+        <div class = "container">
+            
+            <p>My Skills: <label class = "checkbox-inline">
+                <input type = "checkbox" value = "">Java
+             </label>
+             <label class = "checkbox-inline">
+                <input type="checkbox" value="">C++
+             </label>
+             <label class = "checkbox-inline">
+                <input type = "checkbox" value = "">C
+             </label></p>
+             <div class="form-group row">
+                <label class="col-sm-2">Gender </label>
+
+                <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+        
+                </div>
+            </div>
+              
+            
+         </div>
+         
+ 
+       
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+      
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+           $("#submit").click(function(){
+           var a=$(".input").val();
+           if(a==""){
+            alert("enter value");
+           }
+           else{
+            alert("value entered");
+           }
+          
+           })
+           event.defaultPrevented()
+           
+
+        });
+        
+      
+    </script>
+    
+</body>
+</html>

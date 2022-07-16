@@ -1,10 +1,8 @@
 fetch("https://www.balldontlie.io/api/v1/players").then((data)=>{
-               console.log(data);
+             //  console.log(data)
         return data.json();
-       //  console.log(data.data);
     }).then((objectdata)=>{
-      console.log(objectdata);
-        // console.log(objectdata.data[0].id);
+         console.log(objectdata.data[0].id);
         let tabledata="";
         let selectionboxdata="";
         objectdata.data.map((values)=>{tabledata+= `<tr>
@@ -23,6 +21,5 @@ fetch("https://www.balldontlie.io/api/v1/players").then((data)=>{
 
         }).catch((err)=>{
         console.log(err)})
-        console.log(objectdata);
         
         

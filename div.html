@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child">
+                <div class="subchild1"></div>
+                <div class="subchild2"></div>
+                <div class="subchild3"></div>
+                <div class="subchild4"></div>
+            </div>
+        </div>
+        <div class="parent1"><button class="addClass">addClass</button></div>
+        <div class="parent2"></div>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".addClass").click(function(){
+            $(".parent2").siblings('.parent').find(".subchild2").addClass('green')
+
+        });
+     
+    });
+</script>
+</body>
+</html>
